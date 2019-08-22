@@ -72,15 +72,27 @@ function formatPrint(arr,price){
     var line= '-----------\n'
     res = res+line;
     arr.forEach(function(item){
-         var str=item.name +"\t"+item.price+"\t"+item.name+"\n";
+         var str=item.name +"\t"+item.price+"\t"+item.count+"\n";
          res=res+str;
     })
     res=res+line+'price:'+price;
+    return res;
+}
+function posMachine(codes){
+    var generatedRecipt = generateReciptItems(codes);
+    var price = countTotalPrice(generatedRecipt);
+    var result = formatPrint(generatedRecipt,price);
+    return result;
+    
+
+
+
 }
 module.exports = {
     countCodes,
-    //fetchProduct,
+    fetchProduct,
     generateReciptItems,
     countTotalPrice,
-    formatPrint
+    formatPrint,
+    posMachine
 };

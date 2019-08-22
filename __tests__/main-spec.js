@@ -1,8 +1,9 @@
-const {//countCodes,//getPrice,
-    //fetchProduct,
+const {countCodes,//getPrice,
+    fetchProduct,
     generateReciptItems,
     countTotalPrice,
-    formatPrint} = require('../main');
+    formatPrint,
+    posMachine} = require('../main');
  
 // it ('should count codes', () => {
 //     //given
@@ -57,14 +58,14 @@ it ('should get price of goods', () => {
     
 // });
 it ('should', () => {
-    //const codes = ['0001', '0003', '0005', '0003']; 
+    const codes = ['0001', '0003', '0005', '0003']; 
     //let res = generateReciptItems(codes);
     //console.log(res); 
     
-    const input = [ { count: 1, price: 3, name: 'Coca Cola' },
-    { count: 2, price: 5, name: 'Pepsi-Cola' }  ]
+    // const input = [ { count: 1, price: 3, name: 'Coca Cola' },
+    // { count: 2, price: 5, name: 'Pepsi-Cola' }  ]
     //var price = countTotalPrice(input);
     //console.log(price);
-    var output = formatPrint(input,13);
+    var output = posMachine(codes);
     console.log(output);
 });
